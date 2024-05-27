@@ -1,0 +1,46 @@
+---
+interface Props {
+  text: string;
+}
+const { text } = Astro.props;
+---
+
+<div class="tooltip">
+  <slot />
+  <span class="tooltip-text">{text}</span>
+</div>
+
+<style>
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+
+  .tooltip-text {
+    visibility: hidden;
+    background-color: var(--background-100);
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 0.35rem;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position above the icon */
+    left: 50%;
+    transform: translateX(-50%); /* Center the tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: var(--font-size-3xs);
+    letter-spacing: 0.1rem;
+    border: 1.5px solid var(--primary-200);
+    white-space: nowrap; /* Prevents text from wrapping */
+    display: inline-block; /* Ensures width adjusts to text */
+  }
+
+  .tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+</style>

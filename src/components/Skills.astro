@@ -1,0 +1,119 @@
+---
+import AstroIcon from "./Icons/AstroIcon.astro";
+import JavaScriptIcon from "./Icons/JavaScript.astro";
+import NextIcon from "./Icons/Next.astro";
+import ReactIcon from "./Icons/React.astro";
+import NodeIcon from "./Icons/Node.astro";
+import Tooltip from "./ui/Tooltip.astro";
+import Divider from "./ui/Divider.astro";
+import PythonIcon from "./Icons/Python.astro";
+import HtmlIcon from "./Icons/Html.astro";
+import CssIcon from "./Icons/Css.astro";
+import ScssIcon from "./Icons/Scss.astro";
+import CIcon from "./Icons/C.astro";
+import TypeScriptIcon from "./Icons/TypeScript.astro";
+import MySQLIcon from "./Icons/MySQL.astro";
+import PostgreSQLIcon from "./Icons/PostgreSQL.astro";
+import DockerIcon from "./Icons/Docker.astro";
+import GitIcon from "./Icons/Git.astro";
+import LinuxIcon from "./Icons/Linux.astro";
+---
+
+<div>
+  <h3 class="mb">Skills</h3>
+
+  <div class="skills-container">
+    <!-- Front-end -->
+    <div class="flex">
+      <Tooltip text="HTML">
+        <HtmlIcon class="skills-icon" />
+      </Tooltip>
+      <Tooltip text="CSS">
+        <CssIcon class="skills-icon" />
+      </Tooltip>
+      <Tooltip text="SCSS">
+        <ScssIcon class="skills-icon" />
+      </Tooltip>
+      <Tooltip text="JavaScript">
+        <JavaScriptIcon class="skills-icon" />
+      </Tooltip>
+      <Tooltip text="React">
+        <ReactIcon class="skills-icon" />
+      </Tooltip>
+      <Tooltip text="Next.js">
+        <NextIcon class="skills-icon" />
+      </Tooltip>
+      <Tooltip text="Astro">
+        <AstroIcon class="skills-icon" />
+      </Tooltip>
+      <Divider />
+    </div>
+    <!-- Back-end -->
+    <div class="flex">
+      <Tooltip text="Node.js">
+        <NodeIcon class="skills-icon" />
+      </Tooltip>
+      <Tooltip text="TypeScript">
+        <TypeScriptIcon class="skills-icon" />
+      </Tooltip>
+      <Tooltip text="Python">
+        <PythonIcon class="skills-icon" />
+      </Tooltip>
+      <Tooltip text="C">
+        <CIcon class="skills-icon" />
+      </Tooltip>
+      <Divider />
+    </div>
+    <!-- Databases -->
+    <div class="flex">
+      <Tooltip text="PostgreSQL">
+        <PostgreSQLIcon class="skills-icon" />
+      </Tooltip>
+      <Tooltip text="MySQL">
+        <MySQLIcon class="skills-icon" />
+      </Tooltip>
+      <Divider />
+    </div>
+    <!-- Tools -->
+    <div class="flex">
+      <Tooltip text="Docker">
+        <DockerIcon class="skills-icon" />
+      </Tooltip>
+      <Tooltip text="Git">
+        <GitIcon class="skills-icon" />
+      </Tooltip>
+      <Tooltip text="Linux">
+        <LinuxIcon class="skills-icon" />
+      </Tooltip>
+    </div>
+  </div>
+</div>
+
+<style>
+  .flex {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .mb {
+    margin-bottom: 1.25rem;
+  }
+  .skills-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.75rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .skills-icon {
+    width: 2.25rem;
+    height: 2.25rem;
+    filter: grayscale(100%);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .skills-icon:hover {
+    filter: grayscale(0%);
+    transform: scale(1.125);
+  }
+</style>
