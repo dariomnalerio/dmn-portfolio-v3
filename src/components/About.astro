@@ -1,12 +1,21 @@
-<section>
+<section id="about">
   <h3>About me</h3>
 
-  <div>
+  <div class="p-container">
     <p>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi fugiat
-      nulla qui natus reprehenderit dolor repellat unde amet id deserunt error
-      minima, deleniti officiis mollitia, tenetur cumque? Illum, dignissimos
-      maxime?
+      I'm a software developer from <span class="primary">Uruguay</span>. Though
+      I specialize in front-end work I have <span class="gradient"
+        >experience working in full-stack web applications.</span
+      >
+    </p>
+
+    <p>
+      I am passionate about <span class="secondary">problem solving</span> and enjoy
+      creating <span class="primary">efficient</span> and <span class="gradient"
+        >user-friendly</span
+      > solutions. Continuous learning is at the core of my professional journey,
+      and I am always on the lookout for opportunities where I can contribute my
+      expertise, learn, and grow as a developer.
     </p>
   </div>
 </section>
@@ -16,5 +25,31 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  .p-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 1200px;
+    text-wrap: pretty;
+  }
+
+  .primary {
+    color: var(--primary-300);
+  }
+
+  .secondary {
+    color: var(--secondary-500);
+  }
+
+  .gradient {
+    background: linear-gradient(90deg, var(--secondary-700), var(--accent-500));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 </style>

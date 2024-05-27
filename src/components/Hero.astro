@@ -1,5 +1,6 @@
 ---
 import Skills from "./Skills.astro";
+import DownArrowIcon from "../components/Icons/DownArrow.astro";
 ---
 
 <section>
@@ -12,9 +13,17 @@ import Skills from "./Skills.astro";
   <div class="hero-section-container">
     <Skills />
   </div>
+
+  <a href="#about">
+    <DownArrowIcon class="down-arrow" />
+  </a>
 </section>
 
 <style>
+  section {
+    text-align: center;
+    text-wrap: pretty;
+  }
   .hero-section-container {
     margin-top: 2rem;
   }
@@ -64,6 +73,30 @@ import Skills from "./Skills.astro";
     .stroke-text {
       text-stroke-width: 1px;
       text-stroke-color: var(--text);
+    }
+  }
+
+  .down-arrow {
+    margin-top: 8rem;
+    background-color: var(--color-accent-500);
+    width: 5rem;
+    height: 5rem;
+    animation: bounce 4s 10;
+  }
+
+  @keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-20px);
+    }
+    60% {
+      transform: translateY(-10px);
     }
   }
 </style>

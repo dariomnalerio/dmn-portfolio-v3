@@ -2,13 +2,11 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import About from "../components/About.astro";
-import DownArrowIcon from "../components/Icons/DownArrow.astro";
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
     <Hero />
-    <DownArrowIcon class="down-arrow" />
     <About />
   </main>
 </Layout>
@@ -18,32 +16,7 @@ import DownArrowIcon from "../components/Icons/DownArrow.astro";
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10rem;
-    text-align: center;
-    text-wrap: balance;
+    gap: 20rem;
     margin: 8rem auto;
-  }
-
-  .down-arrow {
-    background-color: var(--color-accent-500);
-    width: 5rem;
-    height: 5rem;
-    animation: bounce 4s 5;
-  }
-
-  @keyframes bounce {
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-      transform: translateY(0);
-    }
-    40% {
-      transform: translateY(-20px);
-    }
-    60% {
-      transform: translateY(-10px);
-    }
   }
 </style>
