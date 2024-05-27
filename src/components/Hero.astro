@@ -37,6 +37,7 @@ import DownArrowIcon from "../components/Icons/DownArrow.astro";
     font-weight: 700;
     opacity: 0.9;
     text-transform: uppercase;
+    color: var(--text-300);
   }
 
   h2 {
@@ -58,21 +59,21 @@ import DownArrowIcon from "../components/Icons/DownArrow.astro";
   .stroke-text {
     color: transparent;
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: var(--text);
+    -webkit-text-stroke-color: var(--text-400);
     transition: all 0.3s;
   }
 
   .stroke-text:hover {
-    color: var(--text);
+    color: var(--text-400);
     scale: 1.1;
-    filter: drop-shadow(0 0 0.1rem rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(0 0 0.1rem var(--text-300);
   }
 
   /* Non-WebKit browsers support */
   @supports (text-stroke: 1px black) {
     .stroke-text {
       text-stroke-width: 1px;
-      text-stroke-color: var(--text);
+      text-stroke-color: var(--text-400);
     }
   }
 

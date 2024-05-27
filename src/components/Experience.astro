@@ -53,7 +53,7 @@ import TypeScript from "./Icons/TypeScript.astro";
       padding: 1.5rem;
       border-radius: 5px;
       max-width: 1200px;
-      color: var(--text);
+      color: var(--text-400);
       background-color: transparent;
       border: 1px solid var(--background-400);
     }
@@ -64,7 +64,7 @@ import TypeScript from "./Icons/TypeScript.astro";
     .card-date {
       font-weight: 700;
       font-size: var(--font-size-4xs);
-      color: var(--text);
+      color: var(--text-400);
     }
 
     .card-header {
@@ -88,7 +88,7 @@ import TypeScript from "./Icons/TypeScript.astro";
     }
 
     .card-arrow {
-      color: var(--text);
+      color: var(--text-400);
       transition: transform 0.4s ease-in-out;
     }
 
@@ -102,6 +102,10 @@ import TypeScript from "./Icons/TypeScript.astro";
         0.5rem,
         -0.5rem
       ); /* Move diagonally to the top right */
+    }
+
+    .card-description {
+      color: var(--text-200);
     }
   </style>
 </section>

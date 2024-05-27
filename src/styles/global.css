@@ -19,7 +19,11 @@
   --font-size-3xs: calc(0.9rem + 0.3vw);
   --font-size-4xs: calc(0.6rem + 0.3vw);
 
-  --text: hsl(216, 44%, 88%);
+  --text-100: hsl(216, 44%, 73%);
+  --text-200: hsl(216, 44%, 78%);
+  --text-300: hsl(216, 44%, 83%);
+  --text-400: hsl(216, 44%, 88%);
+  --text-500: hsl(216, 44%, 93%);
 
   --background: hsl(225, 80%, 2%);
   --background-100: hsl(225, 80%, 4%);
@@ -79,7 +83,7 @@ a {
   text-decoration: none;
 }
 body {
-  color: var(--text);
+  color: var(--text-400);
   background-color: var(--background);
   font-family: "Fira Code", sans-serif;
   display: flex;
