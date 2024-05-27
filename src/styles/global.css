@@ -84,7 +84,12 @@ a {
 }
 body {
   color: var(--text-400);
-  background-color: var(--background);
+  background: radial-gradient(
+    ellipse at center,
+    var(--background-300),
+    var(--background)
+  );
+
   font-family: "Fira Code", sans-serif;
   display: flex;
   flex-direction: column;
