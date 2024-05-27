@@ -17,6 +17,7 @@
   --font-size-xs: calc(0.9rem + 0.8vw);
   --font-size-2xs: calc(0.9rem + 0.5vw);
   --font-size-3xs: calc(0.9rem + 0.3vw);
+  --font-size-4xs: calc(0.6rem + 0.3vw);
 }
 
 @media (prefers-color-scheme: light) {
@@ -67,7 +68,10 @@
     --text: hsl(216, 44%, 88%);
 
     --background: hsl(225, 80%, 2%);
-    --background-100: hsl(222, 46%, 21%);
+    --background-100: hsl(225, 80%, 4%);
+    --background-200: hsl(225, 80%, 6%);
+    --background-300: hsl(225, 80%, 8%);
+    --background-400: hsl(225, 80%, 10%);
 
     --primary-50: hsl(143, 62%, 5%);
     --primary-100: hsl(141, 61%, 10%);
@@ -150,4 +154,8 @@ h3 {
 p {
   font-size: var(--font-size-3xs);
   line-height: 1.5;
+}
+
+section {
+  padding: clamp(10rem, 20vh, 15rem) 0;
 }
