@@ -6,14 +6,19 @@ import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 interface Props {
   btnLang: "en" | "es";
 }
-
-const lang = getLangFromUrl(Astro.url);
 const { btnLang } = Astro.props;
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const isCurrentLang = lang === btnLang;
+
+const slug = btnLang === "en" ? "en" : "es";
+const href = `/${slug}/`;
+const ariaLabel = lang === "en" ? t("header.eng.aria") : t("header.es.aria");
 ---
 
-<a href={`/${btnLang === "en" ? "en" : "es"}/`}>
+<a href={href} aria-label={ariaLabel}>
   {
     btnLang === "en" ? (
       <UsaFlag class="flag" class:list={{ isCurrentLang }} />

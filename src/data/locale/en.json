@@ -25,6 +25,11 @@
   "experience.1.company": "Freelance",
   "experience.1.description": "Smart-ABA, an app that seamlessly integrates advanced technology, intelligent automation, and powerful data insights to empower therapists in the education of children with special learning needs.",
   "bottomNav.home": "Home",
+  "bottomNav.home.aria": "Go back to home section",
   "bottomNav.linkedin": "LinkedIn",
-  "bottomNav.github": "GitHub"
+  "bottomNav.linkedin.aria": "Go to LinkedIn profile",
+  "bottomNav.github": "GitHub",
+  "bottomNav.github.aria": "Go to GitHub profile",
+  "header.eng.aria": "Change language to English",
+  "header.es.aria": "Change language to Spanish"
 }

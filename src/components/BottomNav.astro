@@ -12,15 +12,24 @@ const t = useTranslations(lang);
 <nav id="navbar">
   <ul>
     <li data-tooltip={t("bottomNav.home")}>
-      <a href="#"><Home class="icon" /></a>
+      <a href="#home" aria-label={t("bottomNav.home.aria")}
+        ><Home class="icon" /></a
+      >
     </li>
     <li data-tooltip={t("bottomNav.linkedin")}>
-      <a href={socials.linkedin} target="_blank" rel="noreferrer"
-        ><Linkedin class="icon" /></a
+      <a
+        href={socials.linkedin}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={t("bottomNav.linkedin.aria")}><Linkedin class="icon" /></a
       >
     </li>
     <li data-tooltip={t("bottomNav.github")}>
-      <a href={socials.github} target="_blank" rel="noreferrer"
+      <a
+        href={socials.github}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={t("bottomNav.github.aria")}
         ><Github class="icon" />
       </a>
     </li>

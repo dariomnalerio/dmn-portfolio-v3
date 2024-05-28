@@ -25,6 +25,11 @@
   "experience.1.company": "Freelance",
   "experience.1.description": "Smart-ABA, una aplicación que integra de manera perfecta tecnología avanzada, automatización inteligente e insights de datos poderosos para empoderar a los terapeutas en la educación de niños con necesidades especiales de aprendizaje.",
   "bottomNav.home": "Inicio",
+  "bottomNav.home.aria": "Volver a la página de inicio",
   "bottomNav.linkedin": "LinkedIn",
-  "bottomNav.github": "GitHub"
+  "bottomNav.linkedin.aria": "Ir al perfil de LinkedIn",
+  "bottomNav.github": "GitHub",
+  "bottomNav.github.aria": "Ir al perfil de GitHub",
+  "header.eng.aria": "Cambiar a inglés",
+  "header.es.aria": "Cambiar a español"
 }
