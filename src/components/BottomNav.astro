@@ -1,0 +1,123 @@
+---
+import Github from "./Icons/Github.astro";
+import Home from "./Icons/Home.astro";
+import Linkedin from "./Icons/Linkedin.astro";
+import socials from "../data/socials.json";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<nav id="navbar">
+  <ul>
+    <li data-tooltip={t("bottomNav.home")}>
+      <a href="#"><Home class="icon" /></a>
+    </li>
+    <li data-tooltip={t("bottomNav.linkedin")}>
+      <a href={socials.linkedin} target="_blank" rel="noreferrer"
+        ><Linkedin class="icon" /></a
+      >
+    </li>
+    <li data-tooltip={t("bottomNav.github")}>
+      <a href={socials.github} target="_blank" rel="noreferrer"
+        ><Github class="icon" />
+      </a>
+    </li>
+  </ul>
+
+  <style>
+    nav {
+      position: fixed;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--background-400);
+      color: var(--text);
+      max-width: 300px;
+      border-radius: 1rem;
+      border: 1px solid var(--background-700);
+      transition: transform 0.5s;
+      transform: translate(-50%, 75%); /* Initial state, only 25% visible */
+    }
+
+    nav:hover,
+    nav.show {
+      transform: translate(-50%, 0); /* Fully visible on hover */
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      justify-content: space-around;
+      list-style-type: none;
+      padding: 0.5rem;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem;
+      background-color: var(--background-700);
+      border-radius: 0.5rem;
+    }
+
+    a:hover {
+      background-color: var(--background-600);
+    }
+
+    .icon {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    /* Tooltip styling */
+    li {
+      position: relative;
+    }
+
+    li::before {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: calc(100% + 0.5rem);
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--background-600);
+      color: var(--text);
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transition:
+        opacity 0.3s 0.1s ease-in-out,
+        visibility 0.3s 0.1s ease-in-out;
+      white-space: nowrap;
+    }
+
+    li:hover::before {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+
+  <script>
+    let hideTimeout: number | undefined;
+
+    const nav = document.getElementById("navbar");
+    if (nav) {
+      nav.addEventListener("mouseenter", () => {
+        if (hideTimeout !== undefined) {
+          clearTimeout(hideTimeout);
+        }
+        nav.classList.add("show");
+      });
+
+      nav.addEventListener("mouseleave", () => {
+        hideTimeout = setTimeout(() => {
+          nav.classList.remove("show");
+        }, 500); // 2 seconds delay
+      });
+    }
+  </script>
+</nav>

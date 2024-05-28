@@ -17,7 +17,12 @@ const t = useTranslations(lang);
   <h3>{t("experience.title")}</h3>
 
   <!-- Card -->
-  <a href="/projects/smart-aba" class="card">
+  <a
+    href={`/${lang}/projects/smart-aba`}
+    class="card"
+    target="_blank"
+    rel="noreferrer"
+  >
     <div class="card-header">
       <p class="card-date">{t("experience.1.date")}</p>
       <DiagonalArrow class="card-arrow" />

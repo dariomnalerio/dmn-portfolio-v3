@@ -1,11 +1,6 @@
 ---
 import "../styles/global.css";
 import LangBtn from "./ui/LangBtn.astro";
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
-
-const lang = getLangFromUrl(Astro.url);
-
-const isEng = lang === "en";
 ---
 
 <header>
@@ -20,10 +15,8 @@ const isEng = lang === "en";
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 1rem 2rem 0;
+    padding: 1rem 0;
     width: 100%;
-    position: fixed;
-    z-index: 1000;
   }
   nav {
     display: flex;

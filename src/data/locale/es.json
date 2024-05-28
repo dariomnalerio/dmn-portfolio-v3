@@ -23,5 +23,8 @@
   "experience.1.date": "Marzo de 2023 - Presente",
   "experience.1.role": "Desarrollador Front-end",
   "experience.1.company": "Freelance",
-  "experience.1.description": "Smart-ABA, una aplicación que integra de manera perfecta tecnología avanzada, automatización inteligente e insights de datos poderosos para empoderar a los terapeutas en la educación de niños con necesidades especiales de aprendizaje."
+  "experience.1.description": "Smart-ABA, una aplicación que integra de manera perfecta tecnología avanzada, automatización inteligente e insights de datos poderosos para empoderar a los terapeutas en la educación de niños con necesidades especiales de aprendizaje.",
+  "bottomNav.home": "Inicio",
+  "bottomNav.linkedin": "LinkedIn",
+  "bottomNav.github": "GitHub"
 }
