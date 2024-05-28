@@ -1,21 +1,29 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
 <section id="about">
-  <h3>About me</h3>
+  <h3>{t("about.title")}</h3>
 
   <div class="p-container">
     <p>
-      I'm a software developer from <span class="primary">Uruguay</span>. Though
-      I specialize in front-end work I have <span class="gradient"
-        >experience working in full-stack web applications.</span
-      >
+      {t("about.p1.1")}
+      <span class="primary">{t("about.p1.2")}</span>
+      {t("about.p1.3")}
+      <span class="gradient">{t("about.p1.4")}</span>
     </p>
 
     <p>
-      I am passionate about <span class="secondary">problem solving</span> and enjoy
-      creating <span class="primary">efficient</span> and <span class="gradient"
-        >user-friendly</span
-      > solutions. Continuous learning is at the core of my professional journey,
-      and I am always on the lookout for opportunities where I can contribute my
-      expertise, learn, and grow as a developer.
+      {t("about.p2.1")}
+      <span class="secondary">{t("about.p2.2")}</span>
+      {t("about.p2.3")}
+      <span class="primary">{t("about.p2.4")}</span>
+      {t("about.p2.5")}
+      <span class="gradient">{t("about.p2.6")}</span>
+      {t("about.p2.7")}
     </p>
   </div>
 </section>
@@ -40,11 +48,11 @@
   }
 
   .primary {
-    color: var(--primary-300);
+    color: var(--primary-500);
   }
 
   .secondary {
-    color: var(--secondary-500);
+    color: var(--secondary-700);
   }
 
   .gradient {

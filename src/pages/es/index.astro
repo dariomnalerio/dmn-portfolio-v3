@@ -1,0 +1,30 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/Hero.astro";
+import About from "../../components/About.astro";
+import Experience from "../../components/Experience.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout
+  lang="es"
+  title={t("title") as string}
+  description={t("description") as string}
+>
+  <main>
+    <Hero />
+    <About />
+    <Experience />
+  </main>
+</Layout>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+</style>

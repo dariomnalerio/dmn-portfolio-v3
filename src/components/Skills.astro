@@ -17,10 +17,15 @@ import PostgreSQLIcon from "./Icons/PostgreSQL.astro";
 import DockerIcon from "./Icons/Docker.astro";
 import GitIcon from "./Icons/Git.astro";
 import LinuxIcon from "./Icons/Linux.astro";
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <div>
-  <h3 class="mb">Skills</h3>
+  <h3 class="mb">{t("skills.title")}</h3>
 
   <div class="skills-container">
     <!-- Front-end -->

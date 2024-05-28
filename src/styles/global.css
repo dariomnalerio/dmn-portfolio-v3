@@ -30,6 +30,9 @@
   --background-200: hsl(225, 80%, 6%);
   --background-300: hsl(225, 80%, 8%);
   --background-400: hsl(225, 80%, 10%);
+  --background-500: hsl(225, 80%, 13%);
+  --background-600: hsl(225, 80%, 16%);
+  --background-700: hsl(225, 80%, 19%);
 
   --primary-50: hsl(143, 62%, 5%);
   --primary-100: hsl(141, 61%, 10%);

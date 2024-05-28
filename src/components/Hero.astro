@@ -1,13 +1,19 @@
 ---
 import Skills from "./Skills.astro";
 import DownArrowIcon from "../components/Icons/DownArrow.astro";
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section id="hero">
-  <span class="h1-span">Hey! I'm</span>
-  <h1 class="stroke-text">Dario Nalerio</h1>
+  <span class="h1-span">{t("hero.h1.span")}</span>
+  <h1 class="stroke-text">{t("hero.h1.name")}</h1>
   <h2>
-    A passionate <span class="h2-span">web developer</span> crafting digital experiences
+    {t("hero.h2.first")}
+    <span class="h2-span">{t("hero.h2.second")}</span>{t("hero.h2.third")}
   </h2>
 
   <div class="hero-section-container">
