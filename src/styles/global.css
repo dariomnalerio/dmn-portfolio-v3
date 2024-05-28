@@ -123,5 +123,12 @@ p {
 }
 
 section {
-  padding: clamp(10rem, 20vh, 15rem) 0;
+  padding: calc(5vh + 1rem) 0;
+}
+
+/* mq for section padding */
+@media (max-width: 768px) {
+  section {
+    padding: calc(5vh + 1rem) 0;
+  }
 }
