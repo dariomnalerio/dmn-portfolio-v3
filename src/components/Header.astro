@@ -1,26 +1,39 @@
 ---
 import "../styles/global.css";
+import LangBtn from "./ui/LangBtn.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+
+const isEng = lang === "en";
 ---
 
 <header>
   <nav>
-    <span>Dario Nalerio</span>
-
-    <div>
-      <button>b</button>
-      <button>Resume</button>
-    </div>
+    <LangBtn btnLang="es" />
+    <LangBtn btnLang="en" />
   </nav>
 </header>
 
 <style>
   header {
-    background-color: var(--primary-200);
-    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem 2rem 0;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
   }
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
+    background-color: var(--background-400);
+    padding: 0.25rem 1rem;
+    border-radius: 15px;
+    transition: opacity 0.3s;
+    border: 0.1px solid var(--background-700);
   }
 </style>

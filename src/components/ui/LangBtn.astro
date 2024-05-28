@@ -1,0 +1,45 @@
+---
+import UruguayanFlag from "../Icons/UruguayanFlag.astro";
+import UsaFlag from "../Icons/UsaFlag.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+interface Props {
+  btnLang: "en" | "es";
+}
+
+const lang = getLangFromUrl(Astro.url);
+const { btnLang } = Astro.props;
+
+const isCurrentLang = lang === btnLang;
+---
+
+<a href={`/${btnLang === "en" ? "en" : "es"}/`}>
+  {
+    btnLang === "en" ? (
+      <UsaFlag class="flag" class:list={{ isCurrentLang }} />
+    ) : (
+      <UruguayanFlag class="flag" class:list={{ isCurrentLang }} />
+    )
+  }
+</a>
+
+<style>
+  a {
+  }
+
+  a:hover {
+    opacity: 0.8;
+  }
+
+  .flag {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: inline-block; /* Ensures that the background only covers the content */
+    padding: 0.5rem; /* Adjust padding as needed */
+  }
+
+  .isCurrentLang {
+    background-color: var(--background-700);
+    border-radius: 0.5rem;
+  }
+</style>
