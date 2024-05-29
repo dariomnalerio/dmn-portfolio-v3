@@ -1,6 +1,5 @@
 ---
 import BottomNav from "../components/BottomNav.astro";
-import Header from "../components/Header.astro";
 import "../styles/global.css";
 interface Props {
   title: string;
@@ -22,7 +21,6 @@ const { title, description, lang } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <Header />
     <slot />
     <footer>
       <BottomNav />
