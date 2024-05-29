@@ -2,6 +2,7 @@
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import blogPicture from "../assets/Blog-website.webp";
 import shellPicture from "../assets/Simple-shell.webp";
+import portfolioPicture from "../assets/Portfolio.webp";
 import ProjectCard from "./ui/ProjectCard.astro";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -9,6 +10,7 @@ const t = useTranslations(lang);
 const url = {
   blog: `https://dmn-blog.vercel.app/${lang}/`,
   shell: "https://github.com/dariomnalerio/holbertonschool-simple_shell",
+  portfolio: Astro.url as unknown as string,
 };
 ---
 
@@ -17,15 +19,24 @@ const url = {
 
   <ProjectCard
     title="Blog Website"
-    description="I created a simplistic blog website using Astro's static site generator. The project includes a language switcher as well as pagination and  filtering systems."
+    description="Simplistic blog website using Astro's static site generator. The project includes a language switcher as well as pagination and  filtering systems."
     icons={["html", "css", "astro", "typescript", "tailwind"]}
     img={blogPicture}
     url={url.blog}
   />
 
   <ProjectCard
+    title="Portfolio"
+    description="Creating this portfolio has been a valuable opportunity to showcase my skills, projects, and experience while enhancing my design abilities."
+    icons={["html", "css", "astro", "typescript"]}
+    img={portfolioPicture}
+    url={url.portfolio}
+    openNewPage={false}
+  />
+
+  <ProjectCard
     title="Simple Shell"
-    description="I developed a sh-compatible command language interpreter that executes commands from various sources. This project taught me essential programming concepts and teamwork dynamics."
+    description="Sh-compatible command language interpreter that executes commands from various sources. This project taught me essential programming concepts and teamwork dynamics."
     icons={["c"]}
     img={shellPicture}
     url={url.shell}

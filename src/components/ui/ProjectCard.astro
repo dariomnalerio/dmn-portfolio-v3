@@ -17,6 +17,7 @@ interface Props {
   description: string;
   icons: Icon[];
   url: string;
+  openNewPage?: boolean;
 }
 
 const iconsObj = {
@@ -28,10 +29,13 @@ const iconsObj = {
   c: C,
 };
 
-const { img, title, description, icons, url } = Astro.props;
+const { img, title, description, icons, url, openNewPage } = Astro.props;
+
+const target =
+  openNewPage === undefined ? "_blank" : openNewPage ? "_blank" : "_self";
 ---
 
-<a href={url} class="card" target="_blank" rel="noreferrer">
+<a href={url} class="card" target={target} rel="noreferrer">
   <!-- Card content -->
   <div class="card-content">
     <!-- img -->
