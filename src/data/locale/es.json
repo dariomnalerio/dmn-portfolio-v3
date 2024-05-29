@@ -23,7 +23,7 @@
   "experience.1.date": "Marzo de 2023 - Presente",
   "experience.1.role": "Desarrollador Front-end",
   "experience.1.company": "Freelance",
-  "experience.1.description": "Smart-ABA, una aplicación que integra de manera perfecta tecnología avanzada, automatización inteligente e insights de datos poderosos para empoderar a los terapeutas en la educación de niños con necesidades especiales de aprendizaje.",
+  "experience.1.description": "Smart-ABA, una aplicación que integra tecnología avanzada, automatización inteligente e insights de datos poderosos para empoderar a los terapeutas en la educación de niños con necesidades especiales de aprendizaje.",
   "bottomNav.home": "Inicio",
   "bottomNav.home.aria": "Volver a la página de inicio",
   "bottomNav.linkedin": "LinkedIn",
@@ -31,5 +31,15 @@
   "bottomNav.github": "GitHub",
   "bottomNav.github.aria": "Ir al perfil de GitHub",
   "header.eng.aria": "Cambiar a inglés",
-  "header.es.aria": "Cambiar a español"
+  "header.es.aria": "Cambiar a español",
+  "projects.title": "Proyectos",
+  "projects.1.title": "Blog Website",
+  "projects.1.description": "Sitio web de blog simplista utilizando el generador de sitios estáticos de Astro. El proyecto incluye un switch de idioma, así como sistemas de paginación y filtros.",
+  "projects.1.alt": "Captura de pantalla del sitio web del blog",
+  "projects.2.title": "Portafolio",
+  "projects.2.description": "Crear este portafolio ha sido una valiosa oportunidad para mostrar mis habilidades, proyectos y experiencia mientras mejoro mis capacidades de diseño.",
+  "projects.2.alt": "Captura de pantalla del portafolio",
+  "projects.3.title": "Shell Simple",
+  "projects.3.description": "Intérprete de lenguaje de comandos compatible con sh que ejecuta comandos desde varias fuentes. Este proyecto me enseñó conceptos esenciales de programación y dinámicas de trabajo en equipo.",
+  "projects.3.alt": "Captura de pantalla del Shell Simple"
 }

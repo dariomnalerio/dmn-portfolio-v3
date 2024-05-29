@@ -31,5 +31,15 @@
   "bottomNav.github": "GitHub",
   "bottomNav.github.aria": "Go to GitHub profile",
   "header.eng.aria": "Change language to English",
-  "header.es.aria": "Change language to Spanish"
+  "header.es.aria": "Change language to Spanish",
+  "projects.title": "Projects",
+  "projects.1.title": "Blog Website",
+  "projects.1.description": "Simplistic blog website using Astro's static site generator. The project includes a language switcher as well as pagination and  filtering systems.",
+  "projects.1.alt": "Blog website screenshot",
+  "projects.2.title": "Portfolio",
+  "projects.2.description": "Creating this portfolio has been a valuable opportunity to showcase my skills, projects, and experience while enhancing my design abilities.",
+  "projects.2.alt": "Portfolio screenshot",
+  "projects.3.title": "Simple Shell",
+  "projects.3.description": "Sh-compatible command language interpreter that executes commands from various sources. This project taught me essential programming concepts and teamwork dynamics.",
+  "projects.3.alt": "Simple Shell screenshot"
 }
