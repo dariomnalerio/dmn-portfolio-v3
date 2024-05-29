@@ -18,33 +18,28 @@ const href = `/${slug}/`;
 const ariaLabel = lang === "en" ? t("header.eng.aria") : t("header.es.aria");
 ---
 
-<a href={href} aria-label={ariaLabel}>
-  {
-    btnLang === "en" ? (
-      <UsaFlag class="flag" class:list={{ isCurrentLang }} />
-    ) : (
-      <UruguayanFlag class="flag" class:list={{ isCurrentLang }} />
-    )
-  }
+<a href={href} aria-label={ariaLabel} class:list={{ isCurrentLang }}>
+  {btnLang === "en" ? <UsaFlag class="flag" /> : <UruguayanFlag class="flag" />}
 </a>
 
 <style>
   a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+    border-radius: 25%;
+    padding: 0.5rem;
   }
-
   a:hover {
     opacity: 0.8;
   }
 
   .flag {
-    width: 2.5rem;
-    height: 2.5rem;
-    display: inline-block; /* Ensures that the background only covers the content */
-    padding: 0.5rem; /* Adjust padding as needed */
+    width: 2rem;
+    height: 2rem;
   }
-
   .isCurrentLang {
     background-color: var(--background-700);
-    border-radius: 0.5rem;
   }
 </style>
