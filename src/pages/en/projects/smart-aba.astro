@@ -31,6 +31,7 @@ const url = {
   description={t("smartAba.description")}
   lang="en"
 >
+  <Header />
   <main>
     <h1>{t("smartAba.main.title")}</h1>
 
@@ -87,7 +88,6 @@ const url = {
         alt={t("smartAba.main.img1.alt")}
         class="img"
       />
-      <!-- img footer description -->
       <span class="media-description">
         {t("smartAba.main.img1.description")}
       </span>
@@ -98,7 +98,6 @@ const url = {
         alt={t("smartAba.main.img2.alt")}
         class="img"
       />
-      <!-- img footer description -->
       <span class="media-description">
         {t("smartAba.main.img2.description")}
       </span>
@@ -116,93 +115,81 @@ const url = {
       </span>
     </div>
 
-    <p>
+    <p class="last-p">
       {t("smartAba.main.p3")}
     </p>
   </main>
-
-  <style>
-    body {
-      background: var(--background-300);
-    }
-    main {
-      margin: 0 auto;
-      padding: 4rem;
-      max-width: 1300px;
-      display: flex;
-      flex-direction: column;
-    }
-    h1 {
-      font-size: var(--font-size-lg);
-      text-align: center;
-      padding-bottom: 3rem;
-      color: var(--accent-400);
-    }
-
-    p {
-      font-size: var(--font-size-2xs);
-      padding-bottom: 1rem;
-      text-wrap: wrap;
-    }
-
-    @media (max-width: 768px) {
-      p {
-        font-size: var(--font-size-sm);
-      }
-    }
-
-    .img-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 3rem 0;
-    }
-
-    .media-description {
-      font-size: var(--font-size-4xs);
-      color: var(--text-500);
-      padding-top: 0.5rem;
-      display: flex;
-      justify-content: center;
-    }
-
-    @media (max-width: 768px) {
-      .media-description {
-        font-size: var(--font-size-3xs);
-      }
-    }
-
-    .video-container {
-      padding: 3rem 0;
-    }
-
-    .img {
-      aspect-ratio: 16 / 9;
-      max-width: 800px;
-      height: auto;
-      border-radius: 10px;
-      margin: 0 auto;
-    }
-
-    .name {
-      color: var(--text-500);
-    }
-
-    .name:hover {
-      color: var(--primary-400);
-    }
-
-    .primary-text {
-      color: var(--primary-400);
-    }
-
-    .secondary-text {
-      color: var(--secondary-600);
-    }
-
-    .accent-text {
-      color: var(--accent-600);
-    }
-  </style>
 </Layout>
+
+<style>
+  main {
+    max-width: 1200px;
+  }
+  h1 {
+    font-size: var(--font-size-lg);
+    text-align: center;
+    padding-bottom: 3rem;
+    color: var(--accent-400);
+  }
+
+  p {
+    padding-bottom: 1rem;
+    text-wrap: wrap;
+  }
+
+  .img-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 0;
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .media-description {
+    font-size: var(--font-size-4xs);
+    color: var(--text-500);
+    padding-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .video-container {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem 0;
+  }
+
+  .img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .name {
+    color: var(--text-500);
+  }
+
+  .name:hover {
+    color: var(--primary-400);
+  }
+
+  .primary-text {
+    color: var(--primary-400);
+  }
+
+  .secondary-text {
+    color: var(--secondary-600);
+  }
+
+  .accent-text {
+    color: var(--accent-600);
+  }
+
+  .last-p {
+    padding-bottom: 4rem;
+  }
+</style>
