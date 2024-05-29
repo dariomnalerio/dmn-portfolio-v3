@@ -4,7 +4,6 @@ import Hero from "../../components/Hero.astro";
 import About from "../../components/About.astro";
 import Experience from "../../components/Experience.astro";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
-import Header from "../../components/Header.astro";
 import Projects from "../../components/Projects.astro";
 
 const lang = getLangFromUrl(Astro.url);
@@ -17,18 +16,9 @@ const t = useTranslations(lang);
   description={t("description") as string}
 >
   <main>
-    <Header />
     <Hero />
     <About />
     <Experience />
     <Projects />
   </main>
 </Layout>
-
-<style>
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-</style>
