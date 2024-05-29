@@ -4,13 +4,14 @@ import blogPicture from "../assets/Blog-website.webp";
 import shellPicture from "../assets/Simple-shell.webp";
 import portfolioPicture from "../assets/Portfolio.webp";
 import ProjectCard from "./ui/ProjectCard.astro";
+import misc from "../data/misc.json";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const url = {
   blog: `https://dmn-blog.vercel.app/${lang}/`,
   shell: "https://github.com/dariomnalerio/holbertonschool-simple_shell",
-  portfolio: Astro.url as unknown as string, // TODO: update when deployed
+  portfolio: misc.homeUrl,
 };
 ---
 
