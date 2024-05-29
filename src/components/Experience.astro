@@ -8,109 +8,93 @@ import TailwindCss from "./Icons/TailwindCss.astro";
 import TypeScript from "./Icons/TypeScript.astro";
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import ExperienceCard from "./ui/ExperienceCard.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const url = {
+  smartaba: `${lang}/projects/smart-aba`,
+};
 ---
 
 <section id="experience">
   <h3>{t("experience.title")}</h3>
 
-  <!-- Card -->
-  <a
-    href={`/${lang}/projects/smart-aba`}
-    class="card"
-    target="_blank"
-    rel="noreferrer"
-  >
-    <div class="card-header">
-      <p class="card-date">{t("experience.1.date")}</p>
-      <DiagonalArrow class="card-arrow" />
-    </div>
-    <div class="card-header">
-      <h4>{t("experience.1.role")}</h4>
-      <p>{t("experience.1.company")}</p>
-    </div>
-    <p class="card-description">
-      {t("experience.1.description")}
-    </p>
-
-    <!-- Card Footer -->
-    <div class="icons-container">
-      <TypeScript class="icon" />
-      <React class="icon" />
-      <TailwindCss class="icon" />
-      <Node class="icon" />
-      <PostgreSQL class="icon" />
-      <Docker class="icon" />
-    </div>
-  </a>
-
-  <style>
-    section {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    h3 {
-      text-align: center;
-    }
-
-    .card {
-      padding: 1.5rem;
-      border-radius: 5px;
-      max-width: 1200px;
-      color: var(--text-400);
-      background-color: var(--background-300);
-      border: 1px solid var(--background-600);
-    }
-
-    .card-date {
-      font-weight: 700;
-      font-size: var(--font-size-4xs);
-      color: var(--text-400);
-    }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: var(--font-size-3xs);
-      font-weight: 700;
-      margin: 0.5rem 0;
-    }
-
-    .icon {
-      width: 1.5rem;
-      height: 1.5rem;
-    }
-
-    .icons-container {
-      display: flex;
-      gap: 0.75rem;
-      margin-top: 1rem;
-    }
-
-    .card-arrow {
-      color: var(--text-400);
-      transition: transform 0.4s ease-in-out;
-    }
-
-    .card:hover .card-header {
-      color: var(--primary-300);
-    }
-
-    .card:hover .card-arrow {
-      color: var(--primary-300);
-      transform: translate(
-        0.5rem,
-        -0.5rem
-      ); /* Move diagonally to the top right */
-    }
-
-    .card-description {
-      color: var(--text-200);
-    }
-  </style>
+  <ExperienceCard
+    date={t("experience.1.date")}
+    role={t("experience.1.role")}
+    company={t("experience.1.company")}
+    description={t("experience.1.description")}
+    icons={["typescript", "react", "tailwind", "node", "postgresql", "docker"]}
+    url={url.smartaba}
+  />
 </section>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  .card {
+    padding: 1.5rem;
+    border-radius: 5px;
+    max-width: 1200px;
+    color: var(--text-400);
+    background-color: var(--background-300);
+    border: 1px solid var(--background-600);
+  }
+
+  .card-date {
+    font-weight: 700;
+    font-size: var(--font-size-4xs);
+    color: var(--text-400);
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--font-size-3xs);
+    font-weight: 700;
+    margin: 0.5rem 0;
+  }
+
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .icons-container {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .card-arrow {
+    color: var(--text-400);
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .card:hover .card-header {
+    color: var(--primary-300);
+  }
+
+  .card:hover .card-arrow {
+    color: var(--primary-300);
+    transform: translate(
+      0.5rem,
+      -0.5rem
+    ); /* Move diagonally to the top right */
+  }
+
+  .card-description {
+    color: var(--text-200);
+  }
+</style>
