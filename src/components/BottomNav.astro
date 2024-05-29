@@ -4,6 +4,7 @@ import Home from "./Icons/Home.astro";
 import Linkedin from "./Icons/Linkedin.astro";
 import socials from "../data/socials.json";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import misc from "../data/misc.json";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -12,7 +13,7 @@ const t = useTranslations(lang);
 <nav id="navbar">
   <ul>
     <li data-tooltip={t("bottomNav.home")}>
-      <a href="#home" aria-label={t("bottomNav.home.aria")}
+      <a href={misc.homeUrl} aria-label={t("bottomNav.home.aria")}
         ><Home class="icon" /></a
       >
     </li>

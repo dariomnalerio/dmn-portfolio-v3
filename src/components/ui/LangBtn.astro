@@ -14,11 +14,22 @@ const t = useTranslations(lang);
 const isCurrentLang = lang === btnLang;
 
 const slug = btnLang === "en" ? "en" : "es";
-const href = `/${slug}/`;
 const ariaLabel = lang === "en" ? t("header.eng.aria") : t("header.es.aria");
+
+const currentUrl = Astro.url.pathname;
+const parts = currentUrl.split("/");
+
+// Check if the second part is a language code (e.g., "en" or "es")
+if (parts[1] === "en" || parts[1] === "es") {
+  // Remove the language code
+  parts.splice(1, 1);
+}
+const currentUrlWithoutLang = parts.join("/");
+
+const newUrl = `/${slug}${currentUrlWithoutLang}`;
 ---
 
-<a href={href} aria-label={ariaLabel} class:list={{ isCurrentLang }}>
+<a href={newUrl} aria-label={ariaLabel} class:list={{ isCurrentLang }}>
   {btnLang === "en" ? <UsaFlag class="flag" /> : <UruguayanFlag class="flag" />}
 </a>
 

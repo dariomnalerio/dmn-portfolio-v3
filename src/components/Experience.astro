@@ -1,12 +1,4 @@
 ---
-import DiagonalArrow from "./Icons/DiagonalArrow.astro";
-import Docker from "./Icons/Docker.astro";
-import Node from "./Icons/Node.astro";
-import PostgreSQL from "./Icons/PostgreSQL.astro";
-import React from "./Icons/React.astro";
-import TailwindCss from "./Icons/TailwindCss.astro";
-import TypeScript from "./Icons/TypeScript.astro";
-
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import ExperienceCard from "./ui/ExperienceCard.astro";
 
@@ -14,7 +6,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const url = {
-  smartaba: `${lang}/projects/smart-aba`,
+  smartaba: `/${lang}/projects/smart-aba`,
 };
 ---
 

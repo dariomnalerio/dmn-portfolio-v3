@@ -1,3 +1,208 @@
-<main>
-  <h1>Smart-aba</h1>
-</main>
+---
+import Layout from "../../../layouts/Layout.astro";
+import "../../../styles/global.css";
+import smartAbaLogin from "../../../assets/Smart-ABA-login.webp";
+import smartAbaAddTherapist from "../../../assets/Smart-ABA-add-therapist.webp";
+import Image from "astro/components/Image.astro";
+import socials from "../../../data/socials.json";
+import { YouTube } from "@astro-community/astro-embed-youtube";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const video = {
+  demo: "fdO8CBKM03o",
+  editPrograms: "-45MV3rnS_4",
+};
+
+const url = {
+  linkedin: {
+    jerónimo: "https://www.linkedin.com/in/jer%C3%B3nimo-lussich-55b887144/",
+    lucas: "https://www.linkedin.com/in/lucas-cobham-414ab5191/",
+    ignacio: "https://www.linkedin.com/in/jgnaciogomez/",
+  },
+};
+---
+
+<Layout
+  title={t("smartAba.title")}
+  description={t("smartAba.description")}
+  lang="en"
+>
+  <main>
+    <h1>{t("smartAba.main.title")}</h1>
+
+    <p>
+      {t("smartAba.main.p1.1")}
+      <a href={url.linkedin.jerónimo} class="name" target="_blank"
+        >{t("smartAba.main.p1.2")}</a
+      >,
+      <a href={url.linkedin.lucas} target="_blank" class="name"
+        >{t("smartAba.main.p1.3")}</a
+      >,
+      <a href={url.linkedin.ignacio} class="name" target="_blank"
+        >{t("smartAba.main.p1.4")}</a
+      >
+      {t("smartAba.main.p1.5")}
+      <a href={socials.linkedin} target="_blank" class="name"
+        >{t("smartAba.main.p1.6")}</a
+      >
+      {t("smartAba.main.p1.7")}
+    </p>
+
+    <div class="video-container">
+      <YouTube
+        id={video.demo}
+        posterQuality="max"
+        title={t("smartAba.main.video1.title")}
+        class="img"
+      />
+      <span class="media-description">
+        {t("smartAba.main.video1.description")}
+      </span>
+    </div>
+
+    <p>
+      {t("smartAba.main.p2.1")}
+      <span class="primary-text">{t("smartAba.main.p2.2")}</span>
+      {t("smartAba.main.p2.3")}
+      <span class="secondary-text">{t("smartAba.main.p2.4")}</span>
+      {t("smartAba.main.p2.5")}
+      <span class="accent-text">{t("smartAba.main.p2.6")}</span>
+      {t("smartAba.main.p2.7")}
+      <span class="accent-text">{t("smartAba.main.p2.8")}</span>
+      {t("smartAba.main.p2.9")}
+      <span class="secondary-text"> {t("smartAba.main.p2.10")}</span>
+      {t("smartAba.main.p2.11")}
+      <span class="primary-text"> {t("smartAba.main.p2.12")}</span>
+      {t("smartAba.main.p2.13")}
+      <span class="secondary-text">{t("smartAba.main.p2.14")}</span>
+    </p>
+
+    <div class="img-container">
+      <Image
+        src={smartAbaLogin}
+        alt={t("smartAba.main.img1.alt")}
+        class="img"
+      />
+      <!-- img footer description -->
+      <span class="media-description">
+        {t("smartAba.main.img1.description")}
+      </span>
+    </div>
+    <div class="img-container">
+      <Image
+        src={smartAbaAddTherapist}
+        alt={t("smartAba.main.img2.alt")}
+        class="img"
+      />
+      <!-- img footer description -->
+      <span class="media-description">
+        {t("smartAba.main.img2.description")}
+      </span>
+    </div>
+
+    <div class="video-container">
+      <YouTube
+        id={video.editPrograms}
+        posterQuality="max"
+        title={t("smartAba.main.video2.title")}
+        class="img"
+      />
+      <span class="media-description">
+        {t("smartAba.main.video2.description")}
+      </span>
+    </div>
+
+    <p>
+      {t("smartAba.main.p3")}
+    </p>
+  </main>
+
+  <style>
+    body {
+      background: var(--background-300);
+    }
+    main {
+      margin: 0 auto;
+      padding: 4rem;
+      max-width: 1300px;
+      display: flex;
+      flex-direction: column;
+    }
+    h1 {
+      font-size: var(--font-size-lg);
+      text-align: center;
+      padding-bottom: 3rem;
+      color: var(--accent-400);
+    }
+
+    p {
+      font-size: var(--font-size-2xs);
+      padding-bottom: 1rem;
+      text-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+      p {
+        font-size: var(--font-size-sm);
+      }
+    }
+
+    .img-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 0;
+    }
+
+    .media-description {
+      font-size: var(--font-size-4xs);
+      color: var(--text-500);
+      padding-top: 0.5rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    @media (max-width: 768px) {
+      .media-description {
+        font-size: var(--font-size-3xs);
+      }
+    }
+
+    .video-container {
+      width: 100%;
+      padding: 3rem 0;
+    }
+
+    .img {
+      aspect-ratio: 16 / 9;
+      max-width: 800px;
+      height: auto;
+      border-radius: 10px;
+      margin: auto;
+    }
+
+    .name {
+      color: var(--text-500);
+    }
+
+    .name:hover {
+      color: var(--primary-400);
+    }
+
+    .primary-text {
+      color: var(--primary-400);
+    }
+
+    .secondary-text {
+      color: var(--secondary-600);
+    }
+
+    .accent-text {
+      color: var(--accent-600);
+    }
+  </style>
+</Layout>
