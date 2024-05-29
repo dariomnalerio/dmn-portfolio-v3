@@ -34,7 +34,7 @@
   "header.es.aria": "Cambiar a español",
   "projects.title": "Proyectos",
   "projects.1.title": "Blog Website",
-  "projects.1.description": "Sitio web de blog simplista utilizando el generador de sitios estáticos de Astro. El proyecto incluye un switch de idioma, así como sistemas de paginación y filtros.",
+  "projects.1.description": "Sitio web de blog simple creado utilizando el generador de sitios estáticos de Astro. El proyecto incluye un switch de idioma, así como sistemas de paginación y filtros.",
   "projects.1.alt": "Captura de pantalla del sitio web del blog",
   "projects.2.title": "Portafolio",
   "projects.2.description": "Crear este portafolio ha sido una valiosa oportunidad para mostrar mis habilidades, proyectos y experiencia mientras mejoro mis capacidades de diseño.",

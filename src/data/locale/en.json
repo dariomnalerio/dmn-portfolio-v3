@@ -26,7 +26,7 @@
   "experience.1.description": "Smart-ABA, an app that seamlessly integrates advanced technology, intelligent automation, and powerful data insights to empower therapists in the education of children with special learning needs.",
   "projects.title": "Projects",
   "projects.1.title": "Blog Website",
-  "projects.1.description": "Simplistic blog website using Astro's static site generator. The project includes a language switcher as well as pagination and filtering systems.",
+  "projects.1.description": "Simple blog website created using Astro's static site generator. The project includes a language switcher as well as pagination and filtering systems.",
   "projects.1.alt": "Blog website screenshot",
   "projects.2.title": "Portfolio",
   "projects.2.description": "Creating this portfolio has been a valuable opportunity to showcase my skills, projects, and experience while enhancing my design abilities.",
