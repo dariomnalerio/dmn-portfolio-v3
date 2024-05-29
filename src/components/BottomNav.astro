@@ -8,6 +8,8 @@ import misc from "../data/misc.json";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const url = `${misc.homeUrl}/${lang}`;
 ---
 
 <nav id="navbar">
