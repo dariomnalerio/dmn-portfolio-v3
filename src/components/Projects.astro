@@ -1,0 +1,46 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import blogPicture from "../assets/Blog-website.webp";
+import shellPicture from "../assets/Simple-shell.webp";
+import ProjectCard from "./ui/ProjectCard.astro";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const url = {
+  blog: `https://dmn-blog.vercel.app/${lang}/`,
+  shell: "https://github.com/dariomnalerio/holbertonschool-simple_shell",
+};
+---
+
+<section>
+  <h3>Projects</h3>
+
+  <ProjectCard
+    title="Blog Website"
+    description="I created a simplistic blog website using Astro's static site generator. The project includes a language switcher as well as pagination and  filtering systems."
+    icons={["html", "css", "astro", "typescript", "tailwind"]}
+    img={blogPicture}
+    url={url.blog}
+  />
+
+  <ProjectCard
+    title="Simple Shell"
+    description="I developed a sh-compatible command language interpreter that executes commands from various sources. This project taught me essential programming concepts and teamwork dynamics."
+    icons={["c"]}
+    img={shellPicture}
+    url={url.shell}
+  />
+</section>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  h3 {
+    text-align: center;
+  }
+</style>

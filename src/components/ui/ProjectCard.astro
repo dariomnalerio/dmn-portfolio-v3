@@ -1,0 +1,165 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+import AstroIcon from "../Icons/AstroIcon.astro";
+import Css from "../Icons/Css.astro";
+import DiagonalArrow from "../Icons/DiagonalArrow.astro";
+import Html from "../Icons/Html.astro";
+import TailwindCss from "../Icons/TailwindCss.astro";
+import C from "../Icons/C.astro";
+import TypeScript from "../Icons/TypeScript.astro";
+
+type Icon = "html" | "css" | "tailwind" | "typescript" | "astro" | "c";
+
+interface Props {
+  img: ImageMetadata;
+  title: string;
+  description: string;
+  icons: Icon[];
+  url: string;
+}
+
+const iconsObj = {
+  html: Html,
+  css: Css,
+  tailwind: TailwindCss,
+  typescript: TypeScript,
+  astro: AstroIcon,
+  c: C,
+};
+
+const { img, title, description, icons, url } = Astro.props;
+---
+
+<a href={url} class="card" target="_blank" rel="noreferrer">
+  <!-- Card content -->
+  <div class="card-content">
+    <!-- img -->
+    <div class="img-container">
+      <Image src={img} alt="Smart ABA" class="img" />
+    </div>
+
+    <div class="info-container">
+      <div class="card-header">
+        <h4>{title}</h4>
+        <DiagonalArrow class="card-arrow" />
+      </div>
+      <p>
+        {description}
+      </p>
+      <div class="stack-container">
+        {
+          icons.map((icon) => {
+            const IconComponent = iconsObj[icon];
+            return <IconComponent />;
+          })
+        }
+      </div>
+    </div>
+  </div>
+</a>
+
+<style>
+  h4 {
+    font-size: var(--font-size-2xs);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    text-wrap: balance;
+    color: var(--text-400);
+  }
+
+  .card {
+    padding: 1.5rem;
+    border-radius: 5px;
+    max-width: 1200px;
+    color: var(--text-400);
+    border: 1px solid transparent;
+  }
+
+  .card:hover {
+    background-color: var(--background-200);
+    border: 1px solid var(--background-600);
+  }
+
+  .card-content {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .img-container {
+    flex: 0 0 30%;
+    height: calc(100% - 2.5rem);
+    aspect-ratio: 16 / 9;
+  }
+
+  .content-container {
+    flex: 1 0 70%;
+  }
+
+  @media (max-width: 1100px) {
+    .card-content {
+      flex-direction: column-reverse;
+      align-items: start;
+      gap: 1rem;
+    }
+
+    .img-container,
+    .content-container {
+      flex: 1 0 100%;
+      max-width: 100%;
+    }
+  }
+
+  .img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+    border: 2px solid var(--background-500);
+    border-radius: 5px;
+  }
+
+  .card-header {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .card-arrow {
+    color: var(--text-400);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .card:hover .card-header {
+    color: var(--primary-300);
+  }
+
+  .card:hover .card-arrow {
+    color: var(--primary-300);
+    transform: translate(0.25rem, -0.5rem);
+  }
+
+  @media (max-width: 1100px) {
+    .footer-container {
+      display: none;
+    }
+  }
+
+  .empty-div {
+    flex: 1 0 30%;
+  }
+
+  .stack-container {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .stack-container > * {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+</style>
