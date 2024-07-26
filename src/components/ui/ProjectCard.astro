@@ -8,8 +8,18 @@ import Html from "../Icons/Html.astro";
 import TailwindCss from "../Icons/TailwindCss.astro";
 import C from "../Icons/C.astro";
 import TypeScript from "../Icons/TypeScript.astro";
+import React from "../Icons/React.astro";
+import Electron from "../Icons/Electron.astro";
 
-type Icon = "html" | "css" | "tailwind" | "typescript" | "astro" | "c";
+type Icon =
+  | "html"
+  | "css"
+  | "tailwind"
+  | "typescript"
+  | "astro"
+  | "c"
+  | "react"
+  | "electron";
 
 interface Props {
   img: ImageMetadata;
@@ -28,6 +38,8 @@ const iconsObj = {
   typescript: TypeScript,
   astro: AstroIcon,
   c: C,
+  react: React,
+  electron: Electron,
 };
 
 const { img, alt, title, description, icons, url, openNewPage } = Astro.props;
