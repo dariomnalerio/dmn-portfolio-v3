@@ -10,6 +10,8 @@ import C from "../Icons/C.astro";
 import TypeScript from "../Icons/TypeScript.astro";
 import React from "../Icons/React.astro";
 import Electron from "../Icons/Electron.astro";
+import Next from "../Icons/Next.astro";
+import PostgreSQL from "../Icons/PostgreSQL.astro";
 
 type Icon =
   | "html"
@@ -19,7 +21,9 @@ type Icon =
   | "astro"
   | "c"
   | "react"
-  | "electron";
+  | "electron"
+  | "next"
+  | "postgresql";
 
 interface Props {
   img: ImageMetadata;
@@ -40,6 +44,8 @@ const iconsObj = {
   c: C,
   react: React,
   electron: Electron,
+  next: Next,
+  postgresql: PostgreSQL,
 };
 
 const { img, alt, title, description, icons, url, openNewPage } = Astro.props;
